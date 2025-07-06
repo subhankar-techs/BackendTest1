@@ -11,6 +11,7 @@ const host    = process.env.HOST
 
 const userRouter = require('./routes/userRoute');
 const productRouter = require('./routes/productRoute');
+const orderRouter = require('./routes/orderRoute');
 const app = express();
 app.use(cors());
 
@@ -25,6 +26,7 @@ app.get("/",(req,res)=>{
 //use of userRouter
 app.use("/api/users",userRouter);
 app.use("/api/products",productRouter);
+app.use("/api/orders",orderRouter);
 app.listen(port,host,()=>{
     console.log(`Express server has started at http://${host}:${port}/`);
 })

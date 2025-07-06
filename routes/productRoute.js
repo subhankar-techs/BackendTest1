@@ -4,8 +4,7 @@ const express = require('express');
 const userRouter = express.Router();
 
 const con = require("../db");
-//todo related all api endpoints should be mentioned.
-//which will fetch all records from table products and display in json
+
 userRouter.get("/all",(req,res)=>{
     var SQL="select * from products";  
     con.query(SQL,(error,userData,field)=>{
